@@ -1,0 +1,29 @@
+package Week_6.Practice;
+public class Student {
+    String name;
+    double attendance;
+
+    // Shared static fields
+    static String collegeName = "SRM Institute of Science and Technology";
+    static int studentCount = 0;
+
+    public Student(String name, double attendance) {
+        this.name = name;
+        this.attendance = attendance;
+        studentCount++; // Increment count on every object instantiation
+    }
+
+    // Static method referencing only static fields
+    public static void printCollegeInfo() {
+        System.out.println(collegeName);
+        System.out.println("Students created: " + studentCount);
+    }
+
+    public static void main(String[] args) {
+        Student student1 = new Student("Aarav", 85.5);
+        Student student2 = new Student("Diya", 92.0);
+
+        // Called directly through class name
+        Student.printCollegeInfo();
+    }
+}
